@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Who Database - Admin Panel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🕰️ Doctor Who Database</h1>
+            <p>CMSC 4323 Final Project - Database Management System</p>
+        </header>
+
+        <nav class="tabs">
+            <button class="tab-btn active" data-tab="doctors">Doctors</button>
+            <button class="tab-btn" data-tab="episodes">Episodes</button>
+            <button class="tab-btn" data-tab="queries">Queries</button>
+            <button class="tab-btn" data-tab="llm">AI Assistant</button>
+        </nav>
+
+        <!-- Doctors Tab -->
+        <div id="doctors-tab" class="tab-content active">
+            <div class="section-header">
+                <h2>Doctors Management</h2>
+                <button class="btn btn-primary" onclick="showDoctorForm()">+ Add Doctor</button>
+            </div>
+            <div id="doctors-list" class="data-list"></div>
+        </div>
+
+        <!-- Episodes Tab -->
+        <div id="episodes-tab" class="tab-content">
+            <div class="section-header">
+                <h2>Episodes Management</h2>
+                <button class="btn btn-primary" onclick="showEpisodeForm()">+ Add Episode</button>
+            </div>
+            <div id="episodes-list" class="data-list"></div>
+        </div>
+
+        <!-- Queries Tab -->
+        <div id="queries-tab" class="tab-content">
+            <h2>Database Queries</h2>
+            <div class="query-section">
+                <h3>Multi-Join Query</h3>
+                <div class="query-controls">
+                    <input type="number" id="doctor-id" placeholder="Doctor ID" min="1">
+                    <button class="btn btn-secondary" onclick="queryDoctorDetails()">Get Doctor Details</button>
+                </div>
+                <div id="join-results" class="results"></div>
+            </div>
+            <div class="query-section">
+                <h3>VIEW Queries</h3>
+                <button class="btn btn-secondary" onclick="queryDoctorSummary()">Doctor Summary View</button>
+                <button class="btn btn-secondary" onclick="queryEnemySummary()">Enemy Summary View</button>
+                <div id="view-results" class="results"></div>
+            </div>
+            <div class="query-section">
+                <h3>Stored Procedures</h3>
+                <div class="query-controls">
+                    <input type="number" id="threat-level" placeholder="Min Threat Level (1-10)" min="1" max="10">
+                    <button class="btn btn-secondary" onclick="queryEnemiesByThreat()">Get Enemies</button>
+                </div>
+                <div id="procedure-results" class="results"></div>
+            </div>
+            <div class="query-section">
+                <h3>UPDATE Query</h3>
+                <div class="query-controls">
+                    <input type="number" id="enemy-id" placeholder="Enemy ID" min="1">
+                    <input type="number" id="new-threat" placeholder="New Threat Level (1-10)" min="1" max="10">
+                    <button class="btn btn-secondary" onclick="updateEnemyThreat()">Update Threat Level</button>
+                </div>
+                <div id="update-results" class="results"></div>
+            </div>
+        </div>
+
+        <!-- LLM Tab -->
+        <div id="llm-tab" class="tab-content">
+            <h2>AI Assistant - Natural Language Queries</h2>
+            <p class="description">Ask questions about the Doctor Who database in natural language!</p>
+            <div class="llm-container">
+                <textarea id="llm-query" placeholder="Example: Which Doctor had the most companions? What episodes featured the Daleks?"></textarea>
+                <button class="btn btn-primary" onclick="askLLM()">Ask AI</button>
+                <div id="llm-results" class="results"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Forms -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
