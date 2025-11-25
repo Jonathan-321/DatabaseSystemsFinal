@@ -144,12 +144,12 @@ async function seedDatabase() {
     console.log('✓ Doctor-Companions seeded');
 
     // Seed EPISODE_APPEARANCES
+    // Note: character_id references the CHARACTER table, not companions
     await models.EpisodeAppearance.bulkCreate([
-      { episode_id: episodes[0].episode_id, character_type: 'Companion', character_id: companions[0].companion_id, screen_time_min: 40 },
       { episode_id: episodes[0].episode_id, character_type: 'Supporting', character_id: characters[0].character_id, screen_time_min: 10 },
       { episode_id: episodes[0].episode_id, character_type: 'Supporting', character_id: characters[1].character_id, screen_time_min: 5 },
-      { episode_id: episodes[5].episode_id, character_type: 'Companion', character_id: companions[1].companion_id, screen_time_min: 50 },
-      { episode_id: episodes[6].episode_id, character_type: 'Companion', character_id: companions[2].companion_id, screen_time_min: 45 }
+      { episode_id: episodes[5].episode_id, character_type: 'Supporting', character_id: characters[2].character_id, screen_time_min: 30 },
+      { episode_id: episodes[6].episode_id, character_type: 'Supporting', character_id: characters[3].character_id, screen_time_min: 45 }
     ]);
     console.log('✓ Episode Appearances seeded');
 
