@@ -1,37 +1,31 @@
 # Team Contributions
 
-## Project: Doctor Who Database - CMSC 4323 Final Project
+## Project: Doctor Who Database 
 
 ### Team Members
 
 1. **Jonathan Muhire**
-   - Contributions: [To be filled in by team member]
-   - Areas of focus:
+   - Built the complete API layer including CRUD routes for Doctors and Episodes, and the service layer. He created two VIEWs (`doctor_episode_summary`, `enemy_appearance_summary`) and three stored procedures for complex queries.He also developed the query routes for multi-join operations.
+
 
 2. **Milton Adina**
-   - Contributions: [To be filled in by team member]
-   - Areas of focus:
+   - Developed the full-stack frontend with responsive GUI , featuring CRUD operations and integrated OpenAI API for natural language queries. He authored the comprehensive deployment guide covering Heroku, Railway, Vercel, and AWS, configured all deployment files, and created testing scripts for quality assurance.
+
 
 3. **Magnani Fabiola**
-   - Contributions: [To be filled in by team member]
-   - Areas of focus:
+   - Implemented all Sequelize models with associations, and configured database constraints and indexes.She developed  scripts for database synchronization and the 2000+ row import feature Magnani also authored the comprehensive README.md with setup instructions and API documentation.
 
 ---
 
-## Contribution Guidelines
+## Shared Contributions
+1. All team members contributed to:
 
-Each team member should document their specific contributions in the sections above, including:
+- Project planning and design decisions
+- Code review and debugging
+- Final testing 
+- Documentation review and updates
+- We all worked together to understand and implement all the extra credit features.
 
-- Database design and ERD development
-- Model creation and associations
-- API endpoint development
-- Frontend development
-- Testing and debugging
-- Documentation
-- Deployment setup
-- Extra credit features
 
 ---
-
-**Note**: This document should be updated as the project progresses to accurately reflect each member's contributions for the final submission.
 

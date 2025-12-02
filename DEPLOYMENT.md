@@ -1,6 +1,6 @@
 # Deployment Guide
 
-This guide explains how to deploy the Doctor Who Database project to various platforms for extra credit 7c.
+This guide explains how to deploy the Doctor Who Database project to various platforms.
 
 ## Prerequisites
 
@@ -191,3 +191,4 @@ After deployment, your application will be available at:
 - Enable HTTPS (most platforms do this automatically)
 - Consider rate limiting for production
 
+---
