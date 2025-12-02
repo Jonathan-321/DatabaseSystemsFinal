@@ -226,7 +226,7 @@ Server runs at `http://localhost:3000`
 
 ## Extra Credit Features
 
-### 7a: GUI Frontend with CRUD Operations (+6%)
+### 7a: GUI Frontend with CRUD Operations 
 
 A web interface is available at `http://localhost:3000` (when frontend is implemented) that allows:
 - Viewing all doctors and episodes
@@ -234,16 +234,15 @@ A web interface is available at `http://localhost:3000` (when frontend is implem
 - Updating existing records
 - Deleting records
 
-### 7b: LLM Natural Language Queries (+6%)
+### 7b: LLM Natural Language Queries 
 
 The frontend includes an LLM integration that allows users to ask natural language questions about the database, such as:
 - "Which Doctor had the most companions?"
 - "What episodes featured the Daleks?"
 - "List all enemies with threat level above 8"
 
-See [LLM_SETUP_GUIDE.md](LLM_SETUP_GUIDE.md) for setup instructions.
 
-### 7c: Online Deployment (+6%)
+### 7c: Online Deployment 
 
 The application is configured for deployment on platforms like:
 - Heroku
@@ -316,14 +315,6 @@ Import the API endpoints into Postman or use the provided collection file.
 - Ensure all models are properly imported in `src/models/index.js`
 - Check foreign key relationships match the ERD
 - Verify database schema is synced: `npm run db:sync`
-
-## Team Contributions
-
-See [CONTRIBUTIONS.md](CONTRIBUTIONS.md) for detailed team member contributions.
-
-## License
-
-ISC
 
 ## References
 

@@ -8,7 +8,7 @@ async function seedDatabase() {
     // Check if data already exists
     const existingActors = await models.Actor.count();
     if (existingActors > 0) {
-      console.log('⚠️  Database already contains data. Skipping seed.');
+      console.log('  Database already contains data. Skipping seed.');
       console.log('   To re-seed, run: npm run db:sync (this will drop all tables)');
       process.exit(0);
     }
@@ -26,7 +26,7 @@ async function seedDatabase() {
       { name: 'Karen Gillan', birth_date: '1987-11-28', nationality: 'Scottish' },
       { name: 'Jenna Coleman', birth_date: '1986-04-27', nationality: 'British' }
     ]);
-    console.log('✓ Actors seeded');
+    console.log(' Actors seeded');
 
     // Seed WRITERS
     const writers = await models.Writer.bulkCreate([
@@ -36,7 +36,7 @@ async function seedDatabase() {
       { name: 'Robert Holmes', notable_works: 'Classic Who writer' },
       { name: 'Chris Chibnall', notable_works: 'Doctor Who (2018-2022), Broadchurch' }
     ]);
-    console.log('✓ Writers seeded');
+    console.log(' Writers seeded');
 
     // Seed DIRECTORS
     const directors = await models.Director.bulkCreate([
@@ -46,7 +46,7 @@ async function seedDatabase() {
       { name: 'Rachel Talalay' },
       { name: 'Jamie Payne' }
     ]);
-    console.log('✓ Directors seeded');
+    console.log(' Directors seeded');
 
     // Seed PLANETS
     const planets = await models.Planet.bulkCreate([
@@ -56,7 +56,7 @@ async function seedDatabase() {
       { name: 'Mondas', galaxy: 'Unknown', description: 'Twin planet of Earth' },
       { name: 'New Earth', galaxy: 'Unknown', description: 'Colony planet' }
     ]);
-    console.log('✓ Planets seeded');
+    console.log(' Planets seeded');
 
     // Seed SPECIES
     const species = await models.Species.bulkCreate([
@@ -66,7 +66,7 @@ async function seedDatabase() {
       { name: 'Cyberman', home_planet_id: planets[3].planet_id, technology_level: 'Advanced' },
       { name: 'Ood', home_planet_id: planets[4].planet_id, technology_level: 'Moderate' }
     ]);
-    console.log('✓ Species seeded');
+    console.log(' Species seeded');
 
     // Seed SEASONS
     const seasons = await models.Season.bulkCreate([
@@ -76,7 +76,7 @@ async function seedDatabase() {
       { series_number: 11, year: 2018, showrunner_id: writers[4].writer_id },
       { series_number: 13, year: 2021, showrunner_id: writers[4].writer_id }
     ]);
-    console.log('✓ Seasons seeded');
+    console.log(' Seasons seeded');
 
     // Seed EPISODES
     const episodes = await models.Episode.bulkCreate([
@@ -90,7 +90,7 @@ async function seedDatabase() {
       { season_id: seasons[3].season_id, writer_id: writers[4].writer_id, director_id: directors[4].director_id, title: 'The Woman Who Fell to Earth', episode_number: 1, air_date: '2018-10-07', runtime_minutes: 50 },
       { season_id: seasons[4].season_id, writer_id: writers[4].writer_id, director_id: directors[3].director_id, title: 'The Halloween Apocalypse', episode_number: 1, air_date: '2021-10-31', runtime_minutes: 50 }
     ]);
-    console.log('✓ Episodes seeded');
+    console.log(' Episodes seeded');
 
     // Seed DOCTOR
     const doctors = await models.Doctor.bulkCreate([
@@ -98,7 +98,7 @@ async function seedDatabase() {
       { actor_id: actors[5].actor_id, first_episode_id: episodes[5].episode_id, last_episode_id: episodes[6].episode_id, incarnation_number: 11, catchphrase: 'Geronimo!' },
       { actor_id: actors[6].actor_id, first_episode_id: episodes[7].episode_id, last_episode_id: episodes[8].episode_id, incarnation_number: 13, catchphrase: 'Brilliant!' }
     ]);
-    console.log('✓ Doctors seeded');
+    console.log(' Doctors seeded');
 
     // Seed COMPANIONS
     const companions = await models.Companion.bulkCreate([
@@ -106,7 +106,7 @@ async function seedDatabase() {
       { actor_id: actors[8].actor_id, first_episode_id: episodes[5].episode_id, last_episode_id: episodes[6].episode_id, name: 'Amy Pond', species_id: species[1].species_id, home_planet_id: planets[1].planet_id },
       { actor_id: actors[9].actor_id, first_episode_id: episodes[6].episode_id, name: 'Clara Oswald', species_id: species[1].species_id, home_planet_id: planets[1].planet_id }
     ]);
-    console.log('✓ Companions seeded');
+    console.log(' Companions seeded');
 
     // Seed ENEMIES
     const enemies = await models.Enemy.bulkCreate([
@@ -116,7 +116,7 @@ async function seedDatabase() {
       { name: 'Weeping Angel', home_planet_id: null, species_id: null, threat_level: 8 },
       { name: 'Silence', home_planet_id: null, species_id: null, threat_level: 7 }
     ]);
-    console.log('✓ Enemies seeded');
+    console.log(' Enemies seeded');
 
     // Seed CHARACTER
     const characters = await models.Character.bulkCreate([
@@ -125,7 +125,7 @@ async function seedDatabase() {
       { name: 'Rory Williams', gender: 'Male', age: 28, biography: 'Amy Pond\'s husband', species_id: species[1].species_id, doctor_id: null, enemy_id: null },
       { name: 'River Song', gender: 'Female', age: 200, biography: 'Time Lord hybrid', species_id: species[0].species_id, doctor_id: doctors[1].doctor_id, enemy_id: null }
     ]);
-    console.log('✓ Characters seeded');
+    console.log(' Characters seeded');
 
     // Seed TARDIS
     await models.Tardis.bulkCreate([
@@ -133,7 +133,7 @@ async function seedDatabase() {
       { owner_doctor_id: doctors[1].doctor_id, type: 'Type 40', chameleon_status: 'Broken (Police Box)' },
       { owner_doctor_id: doctors[2].doctor_id, type: 'Type 40', chameleon_status: 'Broken (Police Box)' }
     ]);
-    console.log('✓ TARDIS seeded');
+    console.log(' TARDIS seeded');
 
     // Seed DOCTOR_COMPANIONS
     await models.DoctorCompanion.bulkCreate([
@@ -141,7 +141,7 @@ async function seedDatabase() {
       { doctor_id: doctors[1].doctor_id, companion_id: companions[1].companion_id, start_episode_id: episodes[5].episode_id, end_episode_id: episodes[6].episode_id },
       { doctor_id: doctors[1].doctor_id, companion_id: companions[2].companion_id, start_episode_id: episodes[6].episode_id, end_episode_id: null }
     ]);
-    console.log('✓ Doctor-Companions seeded');
+    console.log(' Doctor-Companions seeded');
 
     // Seed EPISODE_APPEARANCES
     // Note: character_id references the CHARACTER table, not companions
@@ -151,7 +151,7 @@ async function seedDatabase() {
       { episode_id: episodes[5].episode_id, character_type: 'Supporting', character_id: characters[2].character_id, screen_time_min: 30 },
       { episode_id: episodes[6].episode_id, character_type: 'Supporting', character_id: characters[3].character_id, screen_time_min: 45 }
     ]);
-    console.log('✓ Episode Appearances seeded');
+    console.log(' Episode Appearances seeded');
 
     // Seed EPISODE_LOCATIONS
     await models.EpisodeLocation.bulkCreate([
@@ -160,7 +160,7 @@ async function seedDatabase() {
       { episode_id: episodes[3].episode_id, planet_id: planets[4].planet_id, visit_order: 1 },
       { episode_id: episodes[5].episode_id, planet_id: planets[1].planet_id, visit_order: 1 }
     ]);
-    console.log('✓ Episode Locations seeded');
+    console.log(' Episode Locations seeded');
 
     // Seed ENEMY_EPISODES
     await models.EnemyEpisode.bulkCreate([
@@ -169,9 +169,9 @@ async function seedDatabase() {
       { enemy_id: enemies[2].enemy_id, episode_id: episodes[5].episode_id, role: 'Main Antagonist' },
       { enemy_id: enemies[3].enemy_id, episode_id: episodes[6].episode_id, role: 'Main Antagonist' }
     ]);
-    console.log('✓ Enemy Episodes seeded');
+    console.log(' Enemy Episodes seeded');
 
-    console.log('\n✓ Database seeding completed successfully!');
+    console.log('\n Database seeding completed successfully!');
     process.exit(0);
   } catch (error) {
     console.error('Error seeding database:', error);

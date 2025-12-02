@@ -6,22 +6,23 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #2c3e87;  /* Simple blue instead of gradient */
+
     min-height: 100vh;
-    padding: 20px;
+    padding: 0;
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 100%;
+    margin: 0 ;
     background: white;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    border-radius: 0;
+    box-shadow: none;
     overflow: hidden;
 }
 
 header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #2c3e87;  /* Simple blue instead of gradient */
     color: white;
     padding: 30px;
     text-align: center;
