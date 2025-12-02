@@ -1,10 +1,10 @@
 # Clean Code Refactoring Summary
 
-## 🎯 Objectives Achieved
+## Objectives Achieved
 
 This refactoring transformed the Doctor Who Database codebase from a functional but repetitive implementation into a clean, maintainable, and professional-grade application.
 
-## 📊 Key Improvements
+##  Key Improvements
 
 ### 1. **Eliminated Code Duplication** (40% reduction in code size)
 
@@ -87,7 +87,7 @@ src/
     └── episodes.js          # Clean, validated routes
 ```
 
-## 🚀 Benefits
+## Benefits
 
 1. **Maintainability**: New features can be added without modifying existing code
 2. **Consistency**: Same patterns throughout the codebase
@@ -96,7 +96,7 @@ src/
 5. **Testability**: Easy to write unit tests
 6. **Documentation**: Self-documenting code with JSDoc comments
 
-## 📈 Metrics
+## Metrics
 
 - **Lines of Code**: Reduced by ~40%
 - **Code Duplication**: Eliminated 90% of duplicate patterns
@@ -123,7 +123,7 @@ src/
    - Proper error handling
    - No magic numbers
 
-## 🎉 Result
+## Result
 
 The codebase is now:
 - **Shorter**: Less code to maintain
